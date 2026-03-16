@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    body
+    {
+      background-color: grey;
+      }
+    .navbar ul
+    {
+      background-color:lightgrey;
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px;
+     
+      text-align:right;
+      display:flex;
+      
+      }
+      .navbar a{
+        color:black;
+        text-decoration: none;
+        display: block;
+        padding:20px;
+        text-align: centre;
+      }
+      .navbar a:hover{
+        background-color: white ;
+      }
+      .navbar li a{
+        text-align:right ;
+      }
+     
+     main{
+        justify-content: right;
+     }
+     footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+       background-color:gray;
+       color: white bold;
+       text-align: center;
+}
+
+.imagee
+{
+    display:block;
+    width:100px;
+    height:150px;
+    margin-left: auto;
+    margin-right: auto;
+     border-radius: 70%;
+     image-rendering:auto;
+   
+}
+.download-btn{
+  background-color: brown;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size:16px;
+  text-decoration: 4px;
+  display: inline-block;
+  text-align: center;
+
+}
+.download-btn:hover{
+  background-color: rgb(56, 56, 41);
+}
+  </style>
+  <body>
+      <header>
+        <nav class="navbar">
+          <ul>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="imagee">
+        <img src="D:\PYTHON FULL STACK\HTML FOLDER\CSS\day11\PHOTO.jpeg">
+        <a href="SARANYA RESUME.pdf"download class="download-btn">Download CV</a>
+        </div>
+        <section>
+          <h2>About</h2>
+        <p>MYSELF SARANYA R.I done my B.E in 2013,And i done my M.E in 2015.</p>
+        </section>
+        
+        
+      </main>
+      <footer>
+         <div class="footer-col"></div>
+        <h>ADDRESS</h>
+        <p>#81 Munigurappa Layout</p>
+        <p>Amruthalli</p>
+        <p>BANGLORE</p>
+      </footer>
+    
+  </body>
+  
+</html>
