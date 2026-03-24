@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="container"></div>
+    <h2 class="title">hai hellow</h2>
+    
+    <script>
+        const containerDiv=document.getElementById("container");
+        console.log(containerDiv);
+        //selection by query
+        const headerH2=document.querySelector("h2");
+        //change text//
+        headerH2.textContent="Dom Practice Header";
+        //change style
+        headerH2.style.color="blue";
+        //Create Element
+        const newP=document.createElement("p");
+        //set content and attributes//
+        const newwP = document.createElement("p");
+             // 2. Set the textContent
+        newwP.textContent = "This is a new paragraph.";
+           // 3. Set the data-status attribute
+        newwP.setAttribute("data-status", "created");
+            // Optional: Append to body to see it
+        document.body.appendChild(newwP);
+        //query all
+        
+addParagraphsAndLog();
+        //loop styles
+for (const paragraph of paragraphNodes) {
+    paragraph.style.backgroundColor = "lightgray";
+}
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .border-highlight{
+        border:5px solid gold;
+    }
+</style>
+<body>
+    <div id="gallery">
+        <img src="D:\PYTHON FULL STACK\javaascript\DAY 17\rose2.avif" width="150px" class="gallery-item"></src>
+        <img src="D:\PYTHON FULL STACK\javaascript\DAY 17\rosee.jfif" width="150px" class="gallery-item"></src>
+        <img src="D:\PYTHON FULL STACK\javaascript\DAY 17\tulip.webp" width="150px" class="gallery-item"></src>
+    </div>
+    <script>
+        const image1=document.querySelectorAll('.gallery-item')
+        for(let i=0;i<image1.length;i++)
+    {
+        if(i==2)
+    {
+        image1[i].classList.add('border-highlight');
+    }
+    else if(i==1)
+    {
+        image1[i].setAttribute('alt','A descriptive placeholder image');
+
+    }
+}
+
+    </script>
+    
+</body>
+</html>
