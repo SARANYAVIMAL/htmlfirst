@@ -6,19 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="output-area"></div>
-    <ul></ul>
+   <div id="output-area"></div>
 
     <script>
-        const menuItems=["HOME","ABOUT","SERVICES","CONTACT"];
-        const navList=document.createElement('ul');
-        menuItems.forEach(item=>
-    {
-        const listItem=document.createElement('li');
-        listItem.textContent=item;
-        navList.appendChild(listItem);
-    });
-    document.getElementById('output-area').appendChild(navlist);
+        // 2. JavaScript
+        
+        // o Declare a constant array
+        const menuItems = ["Home", "About", "Services", "Contact"];
+        
+        // o Create a new <ul> element
+        const navList = document.createElement('ul');
+        
+        // o Use .forEach() to iterate
+        menuItems.forEach(function(item) {
+            // o Use document.createElement('li'), set textContent
+            const listItem = document.createElement('li');
+            listItem.textContent = item;
+            
+            // o Use navList.appendChild() to add it to the <ul>
+            navList.appendChild(listItem);
+        });
+        
+        // o Finally, insert the complete list into the page
+        document.getElementById('output-area').appendChild(navList);
     </script>
 </body>
 </html>
