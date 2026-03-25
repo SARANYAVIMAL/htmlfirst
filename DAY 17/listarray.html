@@ -9,25 +9,24 @@
    <div id="output-area"></div>
 
     <script>
-        // 2. JavaScript
-        
-        // o Declare a constant array
+              
+        // Declare a constant array//
         const menuItems = ["Home", "About", "Services", "Contact"];
         
-        // o Create a new <ul> element
+        // Create a new <ul> element//
         const navList = document.createElement('ul');
         
-        // o Use .forEach() to iterate
+        // Use .forEach() to iterate//
         menuItems.forEach(function(item) {
-            // o Use document.createElement('li'), set textContent
+            // Use document.createElement('li'), set textContent
             const listItem = document.createElement('li');
             listItem.textContent = item;
             
-            // o Use navList.appendChild() to add it to the <ul>
+            //Use navList.appendChild() to add it to the <ul>
             navList.appendChild(listItem);
         });
         
-        // o Finally, insert the complete list into the page
+        // insert the complete list into the page//
         document.getElementById('output-area').appendChild(navList);
     </script>
 </body>
