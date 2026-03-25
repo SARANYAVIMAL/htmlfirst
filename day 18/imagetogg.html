@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #toggle-image {
+    cursor: pointer;
+    /* Optional: Add a smooth transition effect */
+    transition: transform 0.2s; 
+    }
+    #toggle-image:hover {
+    transform: scale(1.05);
+    }
+    </style>
+    
+</head>
+<body>
+    <img id="toggle-image" src="image2.jfif" data-alt-src="D:\PYTHON FULL STACK\javaascript\day 18\rose1.jfif">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Select the image element by its ID
+    const toggleImage = document.getElementById('toggle-image');
+
+    //  Attach a click listener to the image
+    toggleImage.addEventListener('click', () => {
+        // 3. Read the current src and the data-alt-src attributes
+        const currentSrc = toggleImage.src;
+        const altSrc = toggleImage.getAttribute('data-alt-src');
+
+        // Get just the filename/path part for comparison (to handle absolute vs relative paths)
+        const currentSrcPath = new URL(currentSrc).pathname;
+        const altSrcPath = new URL(altSrc, document.baseURI).pathname;
+
+        // Swap the values: if src matches the value of data-alt-src, change it back to the original src, otherwise set src to the value of data-alt-src.
+        if (currentSrcPath === altSrcPath) {
+            // It is currently the alternative image, so switch it back to the original
+            const originalSrc = toggleImage.getAttribute('src'); // The original src at page load
+            toggleImage.src = originalSrc;
+        } else {
+            // It is currently the original image, so switch to the alternative
+            toggleImage.src = altSrc;
+        }
+        
+            });
+});
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter the Text</label>
+    <input type="text" id="source-input" placeholder="Type here...">
+    <p id="output-mirror"></p>
+    <script>
+        const sourceInput = document.getElementById('source-input');
+        const outputMirror = document.getElementById('output-mirror');
+
+// Restriction: Prevent 'q'
+sourceInput.addEventListener('keydown', (e) => {
+    if (e.key === 'q' || e.key === 'Q') {
+        e.preventDefault();
+        console.log("Q is restricted.");
+    }
+});
+
+// Mirroring: Update output
+sourceInput.addEventListener('keyup', (e) => {
+    outputMirror.textContent = e.target.value;
+});
+    </script>
+</body>
+</html>

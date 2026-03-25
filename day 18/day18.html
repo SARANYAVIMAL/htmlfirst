@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width:300px;
+            height:300px;
+            background-color: blanchedalmond;
+        }
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <button id="color-btn">Change Box Color</button>
+    <div id="box"></div>
+
+    <!-- Step 4 HTML Setup -->
+    <label for="text-input">Type something:</label>
+    <input type="text" id="text-input">
+    <p>Check the console for input logs.</p>
+
+    <!-- Step 7 Prevent Default (Form Setup) -->
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <button type="submit">Submit Form</button>
+    </form>
+    <p id="form-status">Check the console for form submission logs.</p>
+    <script>
+        const colorBtn = document.getElementById('color-btn');
+        const box = document.getElementById('box');
+        const textInput = document.getElementById('text-input'); // 4. Select the input field
+        const myForm = document.getElementById('myForm'); // 7. Select the form
+
+// 2. Attach Click Handler
+colorBtn.addEventListener('click', function() {
+    // 3. Basic Action: Change the background-color of the box to "red"
+    box.style.backgroundColor = 'red';
+});
+
+// 5. Attach Keyup Handler
+textInput.addEventListener('keyup', function(e) {
+    // 6. Read Input Value and log to console
+    console.log('Input value:', e.target.value);
+});
+
+// 8. Attach Submit Handler
+myForm.addEventListener('submit', function(e) {
+    // 9. Implement Prevent Default to stop page refresh
+    e.preventDefault();
+    console.log('Form submission blocked.');
+    // Optional: provide user feedback on the page
+    document.getElementById('form-status').textContent = "Form submission blocked. Check console.";
+});
+
+// 10. Mouseover/Mouseout handlers
+box.addEventListener('mouseover', function() {
+    // Change box border on mouse over
+    box.style.border = '2px solid black';
+});
+
+box.addEventListener('mouseout', function() {
+    // Clear the border on mouse out
+    box.style.border = '';
+});
+
+    </script>
+    
+</body>
+</html>
