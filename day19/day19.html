@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- 1. HTML Setup -->
+    <label for="phone-input">Phone:</label>
+    <input type="text" id="phone-input">
+
+<br> <br>
+<div>
+    <!-- 5. Form Setup -->
+    <form id="practice-form">
+        <label for="data-input">Username:</label>
+        <input type="text" id="data-input"> <br> <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+    <script>
+        const DIGIT_REGEX = /^\d+$/;
+
+// 3. Regex Test
+console.log("Digit Test (12345):", DIGIT_REGEX.test("12345")); // true
+console.log("Digit Test (123a45):", DIGIT_REGEX.test("123a45")); // false
+
+// 4. Length Validation
+function checkMinLength(value, min) {
+    return value.length >= min;
+}
+console.log("Min Length Test (value 'hello', min 5):", checkMinLength("hello", 5));
+
+// 8. Regex for Username
+const USERNAME_REGEX = /^[a-z0-9]+$/;
+
+// 10. Regex Quantifier Practice
+const ZIP_REGEX = /^\d{5}$/;
+console.log("ZIP Test (90210):", ZIP_REGEX.test("90210")); // true
+console.log("ZIP Test (9021):", ZIP_REGEX.test("9021"));   // false
+
+// 6. Submit Listener
+const form = document.getElementById('practice-form');
+const dataInput = document.getElementById('data-input');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent page refresh
+
+    const value = dataInput.value;
+
+    // 7. Required Field Check
+    if (value === "") {
+        alert("Field required.");
+        return;
+    }
+
+    // 9. Combine Regex and Validation
+    if (!USERNAME_REGEX.test(value)) {
+        alert("Only lowercase letters and numbers allowed.");
+    } else {
+        console.log("Form submitted successfully with value:", value);
+    }
+});
+    </script>
+    
+</body>
+</html>

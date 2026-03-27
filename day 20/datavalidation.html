@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       async function processPosts() {
+  const url = 'https://jsonplaceholder.typicode.com/posts';
+
+  try {
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const posts = await response.json();
+
+    // Filter to keep only posts from userId: 1
+    const filteredPosts = posts.filter(post => post.userId === 1);
+
+    // Use reduce to count the total number of remaining posts
+    const totalCount = filteredPosts.reduce((count) => {
+      return count + 1;
+    }, 0);
+
+    console.log(`Total posts for User 1: ${totalCount}`);
+    
+  } catch (error) {
+    console.error('Failed to fetch or process posts:', error.message);
+  }
+}
+
+processPosts();
+</script>
+    
+</body>
+</html>

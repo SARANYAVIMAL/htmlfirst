@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="phoneInput" placeholder="Enter the number...">
+    <button onclick="handleSubmit()">Submit</button>
+    <script>
+        const PHONE_REGEX = /^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
+
+// 2. Function to test the input
+function validatePhone(numberString) {
+    return PHONE_REGEX.test(numberString);
+}
+
+// 4. Submit button listener (Logic)
+function handleSubmit() {
+    const input = document.getElementById('phoneInput').value;
+    if (validatePhone(input)) {
+        alert("Valid");
+    } else {
+        alert("Invalid");
+    }
+}
+    </script>
+    
+</body>
+</html>

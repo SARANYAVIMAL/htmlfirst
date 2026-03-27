@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="quote-container">
+  <p id="quote-text">Click the button to get inspired...</p>
+  <p id="author">- Kanye West</p>
+  <button id="refresh-quote">New Quote</button>
+  <script>
+    function loadQuote() {
+  const url = "https://api.kanye.rest/";
+
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // Update the DOM with the 'quote' property from the API
+      document.getElementById("quote-text").innerText = `"${data.quote}"`;
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+      document.getElementById("quote-text").innerText = "Failed to load quote.";
+    });
+}
+
+// Attach the function to the button's click event
+document.getElementById("refresh-quote").addEventListener("click", loadQuote);
+
+// Optional: Load an initial quote on page load
+loadQuote();
+  </script>
+</div>
+</body>
+</html>
